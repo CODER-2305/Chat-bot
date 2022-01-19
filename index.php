@@ -26,6 +26,12 @@ $key = json_encode([
         [['text'=>"Mening Profilim", 'url'=>"https://t.me/MrUzcoin"]]
     ]
 ]);
+$key2 = json_encode([
+    'resize_keyboard'=>true,
+    'keyboard'=>[
+        [['text'=>"Github Profilim"]]
+    ]
+]);
 
 if ($text == "/start") {
     bot('sendMessage', [
@@ -34,6 +40,15 @@ if ($text == "/start") {
         'parse_node' => 'markdown',
         'text' => "Botga xush kelibsiz",
         'reply_markup'=> $key
+    ]);
+}
+if ($text == "Github Profilim") {
+    bot('sendMessage', [
+        'chat_id' => $chat_id,
+        'message_id' => $message_id,
+        'parse_node' => 'markdown',
+        'text' => "https://github.com/Uzcoin404",
+        'reply_markup'=> $key2
     ]);
 }
 
