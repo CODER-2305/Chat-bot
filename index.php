@@ -21,13 +21,19 @@ $message = $update->message;
 $chat_id = $message->chat->id;
 $message_id = $message->message_id;
 $text = $message->text;
+$key = json_encode([
+    'inline_keyboard'=> [
+        [['text'=>"Mening Profilim", 'url'=>"https://t.me/MrUzcoin"]]
+    ]
+]);
 
 if ($text == "/start") {
     bot('sendMessage', [
         'chat_id' => $chat_id,
         'message_id' => $message_id,
         'parse_node' => 'markdown',
-        'text' => "Botga xush kelibsiz"
+        'text' => "Botga xush kelibsiz",
+        'reply_markup'=> $key
     ]);
 }
 
