@@ -51,6 +51,16 @@ if ($text == "Github Profilim") {
         'reply_markup'=> $key2
     ]);
 }
+if ($text == "/photo") {
+    bot('sendPhoto', [
+        'chat_id' => $chat_id,
+        'message_id' => $message_id,
+        'parse_node' => 'markdown',
+        'photo' => "https://t.me/texno_talk/1531",
+        'caption' => "Endi rasm bilan",
+        'reply_markup'=> $key2
+    ]);
+}
 
 ob_end_flush();
 ?>
