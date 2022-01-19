@@ -56,9 +56,9 @@ if ($text == "/photo") {
         'chat_id' => $chat_id,
         'message_id' => $message_id,
         'parse_node' => 'markdown',
-        'photo' => "https://t.me/texno_talk/1531",
-        'caption' => "Endi rasm bilan",
-        'reply_markup'=> $key2
+        'photo' => "img/uzcoin.jpg",
+        'caption' => "Hosting orqali yuborildi",
+        'reply_markup'=> $key1
     ]);
 }
 
