@@ -38,12 +38,12 @@ $key = json_encode([
         [['text'=>"Mening Profilim", 'url'=>"https://t.me/MrUzcoin"]]
     ]
 ]);
-$key2 = json_encode([
-    'resize_keyboard'=>true,
-    'keyboard'=>[
-        [['text'=>"Github Profilim"]]
-    ]
-]);
+// $key2 = json_encode([
+//     'resize_keyboard'=>true,
+//     'keyboard'=>[
+//         [['text'=>"Github Profilim"]]
+//     ]
+// ]);
 
 if ($chat_id != $Admin) {
     if ($text == "/start") {
@@ -51,13 +51,13 @@ if ($chat_id != $Admin) {
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
-            'text' => "*Assalomu alaykum $full_name. MrUzcoin $admin_url Qabul botiga xush kelibsiz. Bu yerda menga Murojat yo'llashingiz mumkin*"
+            'text' => "Assalomu alaykum  MrUzcoin Qabul botiga xush kelibsiz. Bu yerda menga Murojat yo'llashingiz mumkin"
         ]);
         bot('sendMessage', [
             'chat_id' => $Admin,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
-            'text' => "Yangi mijoz $full_name $chat_id date('Y-m-d H:i:s')",
+            'text' => "Yangi foydalanuvchi",
         ]);
         // Forward message to Admin
         bot('forwardMessage', [
