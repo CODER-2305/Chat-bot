@@ -38,12 +38,12 @@ $key = json_encode([
         [['text'=>"Mening Profilim", 'url'=>"https://t.me/MrUzcoin"]]
     ]
 ]);
-// $key2 = json_encode([
-//     'resize_keyboard'=>true,
-//     'keyboard'=>[
-//         [['text'=>"Github Profilim"]]
-//     ]
-// ]);
+$key2 = json_encode([
+    'resize_keyboard'=>true,
+    'keyboard'=>[
+        [['text'=>"Bosh sahifa"]]
+    ]
+]);
 
 if ($chat_id != $Admin) {
     if ($text == "/start") {
@@ -51,13 +51,15 @@ if ($chat_id != $Admin) {
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
-            'text' => "`Assalomu alaykum` [MrUzcoin](https://t.me/MrUzcoin) Qabul botiga xush kelibsiz\. Bu yerda menga Murojat yo\'llashingiz mumkin"
+            'text' => "Assalomu alaykum [MrUzcoin](https://t.me/MrUzcoin) Qabul botiga xush kelibsiz\. Bu yerda menga Murojat yo\'llashingiz mumkin",
+            'reply_markup' => $key2
         ]);
         bot('sendMessage', [
             'chat_id' => $Admin,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
             'text' => "Yangi foydalanuvchi",
+            'reply_markup' => $key2
         ]);
         // Forward message to Admin
         bot('forwardMessage', [
@@ -65,6 +67,7 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'from_chat_id' => $chat_id,
             'parse_mode' => 'markdownV2',
+            'reply_markup' => $key2
         ]);
     } else if ($text != "/start"){
         // Forward message to Admin
@@ -73,6 +76,15 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'from_chat_id' => $chat_id,
             'parse_mode' => 'markdownV2',
+            'reply_markup' => $key2
+        ]);
+    } else if ($text == "Bosh sahifa") {
+        bot('sendMessage', [
+            'chat_id' => $chat_id,
+            'message_id' => $message_id,
+            'parse_mode' => 'markdownV2',
+            'text' => "*Bosh sahifaga xush kelibsiz*",
+            'reply_markup' => $key2
         ]);
     }
 } else if ($chat_id == $Admin){
