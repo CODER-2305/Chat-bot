@@ -59,7 +59,6 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
             'text' => "Yangi foydalanuvchi",
-            'reply_markup' => $key2
         ]);
         // Forward message to Admin
         bot('forwardMessage', [
@@ -67,7 +66,6 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'from_chat_id' => $chat_id,
             'parse_mode' => 'markdownV2',
-            'reply_markup' => $key2
         ]);
     } else if ($text != "/start"){
         // Forward message to Admin
@@ -84,7 +82,6 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
             'text' => "*Bosh sahifaga xush kelibsiz*",
-            'reply_markup' => $key2
         ]);
     }
 } else if ($chat_id == $Admin){
