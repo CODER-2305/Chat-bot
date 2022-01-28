@@ -20,7 +20,7 @@ function html($text){
 };
 
 $update = json_decode(file_get_contents('php://input'));
-file_put_contents("log.txt",file_get_contents('php://input'));
+file_put_contents("log.json",file_get_contents('php://input'));
 $message = $update->message;
 $chat_id = $message->chat->id;
 $message_id = $message->message_id;
@@ -29,8 +29,8 @@ $first_name = $message->from->first_name;
 $last_name = $message->from->last_name;
 $full_name = $first_name . " " . $last_name;
 // replymessage
-$reply_message = $message->reply_message;
-$reply_chat_id = $message->reply_message->forward_from->id;
+$reply_message = $message->reply_to_message;
+$reply_chat_id = $message->reply_to_message->forward_from->id;
 $reply_text = $message->text;
 
 $key = json_encode([
@@ -51,7 +51,7 @@ if ($chat_id != $Admin) {
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
-            'text' => "Assalomu alaykum  MrUzcoin Qabul botiga xush kelibsiz. Bu yerda menga Murojat yo'llashingiz mumkin"
+            'text' => "Assalomu alaykum MrUzcoin Qabul botiga xush kelibsiz\. Bu yerda menga Murojat yo\'llashingiz mumkin"
         ]);
         bot('sendMessage', [
             'chat_id' => $Admin,
