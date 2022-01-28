@@ -76,12 +76,14 @@ if ($chat_id != $Admin) {
             'parse_mode' => 'markdownV2',
             'reply_markup' => $key2
         ]);
-    } else if ($text == "Bosh sahifa") {
+    }
+    if ($text == "Bosh sahifa") {
         bot('sendMessage', [
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
             'text' => "*Bosh sahifaga xush kelibsiz*",
+            'reply_markup' => $key2
         ]);
     }
 } else if ($chat_id == $Admin){
