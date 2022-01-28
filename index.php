@@ -51,7 +51,7 @@ if ($chat_id != $Admin) {
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
-            'text' => "_Assalomu alaykum_ [MrUzcoin](https://t.me/MrUzcoin) Qabul ~botiga~ xush kelibsiz\. ||Bu yerda menga Murojat yo\'llashingiz mumkin||"
+            'text' => "`Assalomu alaykum` [MrUzcoin](https://t.me/MrUzcoin) Qabul botiga xush kelibsiz\. Bu yerda menga Murojat yo\'llashingiz mumkin"
         ]);
         bot('sendMessage', [
             'chat_id' => $Admin,
