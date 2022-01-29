@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Tashkent');
 ob_start();
-define("API_KEY", "5046375589:AAGr3BvYHe2NiIPMYyzOpJalcdP2UyvC81Y");
+define("API_KEY", "5115607156:AAFGmmzpeMK6JZBSvIGAjXMmaQPHYeQkvg4");
 $Admin = "829349149";
 $admin_url = "https://t.me/MrUzcoin";
 
@@ -33,17 +33,17 @@ $reply_message = $message->reply_to_message;
 $reply_chat_id = $message->reply_to_message->forward_from->id;
 $reply_text = $message->text;
 
-$key = json_encode([
-    'inline_keyboard'=> [
-        [['text'=>"Mening Profilim", 'url'=>"https://t.me/MrUzcoin"]]
-    ]
-]);
-$key2 = json_encode([
-    'resize_keyboard'=>true,
-    'keyboard'=>[
-        [['text'=>"Bosh sahifa"]]
-    ]
-]);
+// $key = json_encode([
+//     'inline_keyboard'=> [
+//         [['text'=>"Mening Profilim", 'url'=>"https://t.me/MrUzcoin"]]
+//     ]
+// ]);
+// $key2 = json_encode([
+//     'resize_keyboard'=>true,
+//     'keyboard'=>[
+//         [['text'=>"Bosh sahifa"]]
+//     ]
+// ]);
 
 if ($chat_id != $Admin) {
     if ($text == "/start") {
@@ -52,7 +52,6 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
             'text' => "Assalomu alaykum [MrUzcoin](https://t.me/MrUzcoin) Qabul botiga xush kelibsiz\. Bu yerda menga Murojat yo\'llashingiz mumkin",
-            'reply_markup' => $key2
         ]);
         bot('sendMessage', [
             'chat_id' => $Admin,
@@ -74,24 +73,26 @@ if ($chat_id != $Admin) {
             'message_id' => $message_id,
             'from_chat_id' => $chat_id,
             'parse_mode' => 'markdownV2',
-            'reply_markup' => $key2
         ]);
-    }
-    if ($text == "Bosh sahifa") {
         bot('sendMessage', [
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'parse_mode' => 'markdownV2',
-            'text' => "*Bosh sahifaga xush kelibsiz*",
-            'reply_markup' => $key2
+            'text' => "Xabaringiz Adminga yuborildi",
         ]);
     }
 } else if ($chat_id == $Admin){
     if(isset($reply_message)){
-        bot('sendmessage', [
+        bot('sendMessage', [
+            'chat_id' => $reply_chat_id,
+            'message_id' => $message_id,
+            'parse_mode' => 'markdownV2',
+            'text' => "Admin sizga xabar yo\'lladi",
+        ]);
+        bot('sendMessage', [
             'chat_id' => $reply_chat_id,
             'parse_mode' => "markdownV2",
-            'text' => $reply_text,
+            'text' => "||$reply_text||",
         ]);
     }
     if($text == "hi" or $text == "/start"){
