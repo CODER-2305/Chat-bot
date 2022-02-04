@@ -105,3 +105,4 @@ if ($chat_id != $Admin) {
     
 ob_end_flush();
 ?>
+<!-- qachon itg boramiz rtual ola qiroli -->
